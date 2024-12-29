@@ -3,47 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        form {
-            display: inline-block;
-            text-align: left;
-        }
-        input, select, button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px;
-            width: 200px;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-    </style>
+    <title>Responsive Calculator</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <h1>Python Calculator</h1>
-    <form method="POST">
-        <input type="number" step="any" name="num1" placeholder="Enter first number" required>
-        <input type="number" step="any" name="num2" placeholder="Enter second number" required>
-        <select name="operation" required>
-            <option value="add">Add</option>
-            <option value="subtract">Subtract</option>
-            <option value="multiply">Multiply</option>
-            <option value="divide">Divide</option>
-            <option value="modulus">Modulus</option>
-            <option value="power">Power</option>
-        </select>
-        <button type="submit">Calculate</button>
-    </form>
-    {% if result is not none %}
-    <div class="result">Result: {{ result }}</div>
-    {% endif %}
+    <div class="container">
+        <h1>Responsive Calculator</h1>
+        <form method="POST">
+            <input type="number" step="any" name="num1" id="num1" placeholder="Enter first number" required>
+            <input type="number" step="any" name="num2" id="num2" placeholder="Enter second number" required>
+            <select name="operation" id="operation" required>
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+                <option value="multiply">Multiply</option>
+                <option value="divide">Divide</option>
+                <option value="modulus">Modulus</option>
+                <option value="power">Power</option>
+            </select>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result is not none %}
+        <div class="result">
+            Result: {{ result }}
+        </div>
+        {% endif %}
+    </div>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
